@@ -17,7 +17,6 @@ namespace CA_ATaleOfThreeCalculators.Controllers
         {
             double operand1Num;
             double operand2Num;
-            double answerNum = 0;
             List<string> errorMessageText = new List<string>();
             ViewBag.errorMessage = null;
             ViewBag.answer = null;
@@ -28,24 +27,24 @@ namespace CA_ATaleOfThreeCalculators.Controllers
                 {
                     case "add":
                         {
-                            answerNum = operand1Num + operand2Num;
+                            ViewBag.answer = operand1Num + operand2Num;
                             break;
                         }
                     case "subtract":
                         {
-                            answerNum = operand1Num - operand2Num;
+                            ViewBag.answer = operand1Num - operand2Num;
                             break;
                         }
                     case "multiply":
                         {
-                            answerNum = operand1Num * operand2Num;
+                            ViewBag.answer = operand1Num * operand2Num;
                             break;
                         }
                     case "divide":
                         {
                             if (operand2Num != 0)
                             {
-                                answerNum = operand1Num / operand2Num;
+                                ViewBag.answer = operand1Num / operand2Num;
                             }
                             else
                             {
@@ -59,7 +58,6 @@ namespace CA_ATaleOfThreeCalculators.Controllers
                         errorMessageText.Add("Please click the Try Again button below to reenter your numbers.");
                         break;
                 }
-                ViewBag.answer = answerNum;
             }
             else
             {
