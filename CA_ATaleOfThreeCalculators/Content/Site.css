@@ -23,24 +23,32 @@ textarea {
     max-width: 280px;
 }
 
-#UrlInputForm{
+#CalculatorInputForm {
     display: block;
-    overflow:hidden;
+    overflow: hidden;
     padding: 5px;
     background-color: antiquewhite;
     width: 400px;
 }
 
-.floatRight{
-    float:right;
+#CalculatorOutput {
+    display: block;
+    overflow: hidden;
+    padding: 5px;
+    background-color: antiquewhite;
+    width: 400px;
 }
 
-.inputFormCol1{
+.floatRight {
+    float: right;
+}
+
+.inputFormCol1 {
     display: block;
     width: 200px;
 }
 
-.inputFormCol2{
+.inputFormCol2 {
     display: block;
     width: 200px;
 }

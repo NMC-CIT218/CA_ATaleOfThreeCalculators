@@ -168,6 +168,7 @@
     <Content Include="Views\FormCalculator\Index.cshtml" />
     <Content Include="Views\TableGenerator\Index.cshtml" />
     <Content Include="Views\UrlCalculator\Add.cshtml" />
+    <Content Include="Views\FormCalculator\Calculate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

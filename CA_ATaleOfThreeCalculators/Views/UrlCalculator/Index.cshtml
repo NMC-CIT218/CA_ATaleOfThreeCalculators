@@ -1,30 +1,31 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "URL Calculator";
 }
 
 <h2>URL Calculator</h2>
 <form action="FormCalculator/Calculate" method="Get" id="UrlInputForm">
-    <p>Enter the first operand:<input type="text" name="operand1" value=" "  class="floatRight" /></p>
+    <p>Enter the first operand:<input type="text" name="operand1" value=" " class="floatRight" /></p>
     <p>Enter the second operand:<input type="text" name="operand2" value=" " class="floatRight" /></p>
-    <p>Choose the operation:
-    <select name="operation" class="floatRight">
-        <option value="volvo">Add</option>
-        <option value="saab">Subtract</option>
-        <option value="opel">Multiply</option>
-        <option value="audi">Divide</option>
-    </select>
+    <p>
+        Choose the operation:
+        <select name="operation" class="floatRight">
+            <option value="volvo">Add</option>
+            <option value="saab">Subtract</option>
+            <option value="opel">Multiply</option>
+            <option value="audi">Divide</option>
+        </select>
     </p>
-    <p><input type="submit" name="Calculate" class="floatRight" />&nbsp;<input type="reset" name="Clear Form" class="floatRight" /></p>
+    <p><input type="submit" name="calculate" class="floatRight" />&nbsp;<input type="reset" name="clearForm" class="floatRight" /></p>
 </form>
 
 <script>
     $('#Calculate').click(function () {
-        var root = '~/',
-            userEntry1 = $('#operation').val(),
-            userEntry2 = $('#two').val();
+        var root = 'UrlCalculator/Calculate?',
+        operation = $('#operation').val(),
+        operand1 = $('#operand1').val();
+        operand1 = $('#operand1').val();
 
-        var newWindow = window.open(fixedData1 + userEntry1 + fixedData2 + userEntry2, '_blank');
+        var newWindow = window.open(root + userEntry1 + fixedData2 + userEntry2, '_blank');
         newWindow.focus();
     });
 </script>

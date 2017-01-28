@@ -1,11 +1,22 @@
 ﻿
-@{
+@*@{
     ViewBag.Title = "Form Calculator";
-}
+}*@
 
 <h2>Form Calculator</h2>
-<form action="FormCalculator/Calculate" method="Get">
-    <p>Enter the first operand:<input type="text" name="operand1" value=" " /></p>
-    <p>Enter the second operand:<input type="text" name="operand2" value=" " /></p>
+
+<form action="FormCalculator/Calculate" method="Post" id="CalculatorInputForm">
+    <p>Enter the first operand:<input type="text" name="operand1" value=" " class="floatRight" /></p>
+    <p>Enter the second operand:<input type="text" name="operand2" value=" " class="floatRight" /></p>
+    <p>
+        Choose the operation:
+        <select name="operation" class="floatRight">
+            <option value="add">Add</option>
+            <option value="subtract">Subtract</option>
+            <option value="multiply">Multiply</option>
+            <option value="divide">Divide</option>
+        </select>
+    </p>
+    <p><input type="submit" name="calculate" class="floatRight" />&nbsp;<input type="reset" name="clearForm" class="floatRight" /></p>
 </form>
 
