@@ -1,7 +1,19 @@
-﻿
-@{
-    ViewBag.Title = "Table Generator";
-}
+﻿<h2>Wind Chill Table Generator</h2>
 
-<h2>Table Generator</h2>
+<form action="TableGenerator/DisplayTable" method="Post">
 
+    <div class="form-group">
+        <label for="principle">Enter the current temperature:</label>
+        <input type="text" name="principle" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label for="rate">Enter the current wind speed:</label>
+        <input type="text" name="rate" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <input type="submit" name="submit" value="Display Table" class="btn btn-default" />
+    </div>
+
+</form>

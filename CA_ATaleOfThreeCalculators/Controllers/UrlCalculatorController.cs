@@ -13,15 +13,22 @@ namespace CA_ATaleOfThreeCalculators.Controllers
             return View();
         }
 
-        public ActionResult Add(double operand1, double operand2)
+        public ActionResult Add(string operand1, string operand2)
         {
-            if (operand1 != null && operand2 != null)
+            double operand1Num;
+            double operand2Num;
+            List<string> errorMessageText = new List<string>();
+            ViewBag.errorMessage = null;
+
+            if (double.TryParse(operand1, out operand1Num) && double.TryParse(operand2, out operand2Num))
             {
                 ViewBag.answer = (operand1 + operand2).ToString();
             }
             else
             {
-                ViewBag.errorMessage = "You did not enter valid numbers.";
+                errorMessageText.Add("It appears that you did not enter valid operation.");
+                errorMessageText.Add("Please click the Try Again button below to reenter your numbers.");
+                ViewBag.errorMessage = errorMessageText;
             }
 
             return View();

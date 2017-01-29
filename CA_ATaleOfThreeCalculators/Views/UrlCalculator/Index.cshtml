@@ -3,16 +3,17 @@
 }
 
 <h2>URL Calculator</h2>
+
 <div id="CalculatorInputForm">
 
     <div class="form-group">
         <label for="operand1">Enter the first operand:</label>
-        <input type="text" name="operand1" class="form-control" />
+        <input type="text" name="operand1" id="operand1" class="form-control" />
     </div>
 
     <div class="form-group">
         <label for="operand2">Enter the second operand:</label>
-        <input type="text" name="operand2" class="form-control" />
+        <input type="text" name="operand2" id="operand2" class="form-control" />
     </div>
 
     <div class="form-group">
@@ -26,30 +27,10 @@
     </div>
 
     <div class="form-group">
-        <input type="button" id="submit" value="Calculate" class="btn btn-default" />
+        <a href="#" onclick="this.href = 'UrlCalculator/' + document.getElementById('operation').value + '/' + document.getElementById('operand1').value + '/' + document.getElementById('operand2').value" target="_self" class="btn btn-default">Calculate</a>
     </div>
 
 </div>
 
-<input type="text" name="prog_site" id="prog_site" value="http://www.edit-me.com" />
-<a href="#" onclick="this.href=document.getElementById('prog_site').value + '/' + document.getElementById('operation').value" target="_blank">Open URL</a>
 
-<script type="text/javascript">
-    var rootUrl = 'UrlCalculator',
-    operation = $('#operation').val(),
-    operand1 = $('#operand1').val();
-    operand2 = $('#operand2').val();
 
-    $('#CalculatorInputForm').on("submit", function () {
-        event.preventDefault();
-        location.href = rootUrl + '/' + operation + '/' + operand1 + '/' + operand2;
-    });
-
-    $(function () {
-        $('#submit').click(function () {
-            var url = "http://www.google.com/search?q=";
-            url += $('#q').val();
-            window.location = url;
-        });
-    });
-</script>

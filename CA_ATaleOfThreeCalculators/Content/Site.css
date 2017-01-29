@@ -38,3 +38,13 @@ textarea {
     background-color: antiquewhite;
     width: 400px;
 }
+
+#WindChillTable {
+    background-color: antiquewhite;
+}
+
+    #WindChillTable td {
+        width: 40px;
+        color: red;
+        text-align: center;
+    }
