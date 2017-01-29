@@ -1,8 +1,19 @@
-﻿
-@{
-    ViewBag.Title = "Add";
-}
+﻿<h2>Calculate</h2>
 
-<h2>Add</h2>
+<div id="CalculatorOutput">
 
-@ViewBag.answer
+    @if (ViewBag.answer != null)
+    {
+    <p>Answer = @ViewBag.answer</p>
+    }
+    else
+    {
+    foreach(string errorMessageLine in @ViewBag.errorMessage)
+    {
+    <p>@errorMessageLine</p>
+    }
+    }
+
+    @Html.ActionLink("Try Again", "Index", "FormCalculator", null, new { @class = "btn btn-default" })
+
+</div>

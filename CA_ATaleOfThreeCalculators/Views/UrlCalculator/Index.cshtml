@@ -3,29 +3,53 @@
 }
 
 <h2>URL Calculator</h2>
-<form action="FormCalculator/Calculate" method="Get" id="UrlInputForm">
-    <p>Enter the first operand:<input type="text" name="operand1" value=" " class="floatRight" /></p>
-    <p>Enter the second operand:<input type="text" name="operand2" value=" " class="floatRight" /></p>
-    <p>
-        Choose the operation:
-        <select name="operation" class="floatRight">
-            <option value="volvo">Add</option>
-            <option value="saab">Subtract</option>
-            <option value="opel">Multiply</option>
-            <option value="audi">Divide</option>
+<div id="CalculatorInputForm">
+
+    <div class="form-group">
+        <label for="operand1">Enter the first operand:</label>
+        <input type="text" name="operand1" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label for="operand2">Enter the second operand:</label>
+        <input type="text" name="operand2" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label for="operation">Choose the operation:</label>
+        <select name="operation" id="operation" class="form-control">
+            <option value="add">Add</option>
+            <option value="subtract">Subtract</option>
+            <option value="multiply">Multiply</option>
+            <option value="divide">Divide</option>
         </select>
-    </p>
-    <p><input type="submit" name="calculate" class="floatRight" />&nbsp;<input type="reset" name="clearForm" class="floatRight" /></p>
-</form>
+    </div>
 
-<script>
-    $('#Calculate').click(function () {
-        var root = 'UrlCalculator/Calculate?',
-        operation = $('#operation').val(),
-        operand1 = $('#operand1').val();
-        operand1 = $('#operand1').val();
+    <div class="form-group">
+        <input type="button" id="submit" value="Calculate" class="btn btn-default" />
+    </div>
 
-        var newWindow = window.open(root + userEntry1 + fixedData2 + userEntry2, '_blank');
-        newWindow.focus();
+</div>
+
+<input type="text" name="prog_site" id="prog_site" value="http://www.edit-me.com" />
+<a href="#" onclick="this.href=document.getElementById('prog_site').value + '/' + document.getElementById('operation').value" target="_blank">Open URL</a>
+
+<script type="text/javascript">
+    var rootUrl = 'UrlCalculator',
+    operation = $('#operation').val(),
+    operand1 = $('#operand1').val();
+    operand2 = $('#operand2').val();
+
+    $('#CalculatorInputForm').on("submit", function () {
+        event.preventDefault();
+        location.href = rootUrl + '/' + operation + '/' + operand1 + '/' + operand2;
+    });
+
+    $(function () {
+        $('#submit').click(function () {
+            var url = "http://www.google.com/search?q=";
+            url += $('#q').val();
+            window.location = url;
+        });
     });
 </script>

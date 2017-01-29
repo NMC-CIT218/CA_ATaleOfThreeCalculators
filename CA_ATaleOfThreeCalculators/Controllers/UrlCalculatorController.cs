@@ -8,7 +8,11 @@ namespace CA_ATaleOfThreeCalculators.Controllers
 {
     public class UrlCalculatorController : Controller
     {
-        // GET: UrlCalculator
+        public ActionResult Index()
+        {
+            return View();
+        }
+
         public ActionResult Add(double operand1, double operand2)
         {
             if (operand1 != null && operand2 != null)

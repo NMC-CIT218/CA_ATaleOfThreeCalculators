@@ -13,9 +13,9 @@
             <p>@errorMessageLine</p>
         }
     }
-    @*<input type="button" class="btn btn-info" value="Let's Go!" onclick="location.href='@Url.Action(" Action", "Controller" )'" />
-    <input type="button" onclick="location.href='@(Url.Action("Index", "FormCalculator"))'" value="Try Again" />*@
+
     @Html.ActionLink("Try Again", "Index", "FormCalculator", null, new { @class = "btn btn-default" })
+
 </div>
 
 
