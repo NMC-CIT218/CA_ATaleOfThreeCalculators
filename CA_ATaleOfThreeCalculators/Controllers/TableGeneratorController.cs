@@ -8,12 +8,14 @@ namespace CA_ATaleOfThreeCalculators.Controllers
 {
     public class TableGeneratorController : Controller
     {
+        [HttpGet]
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult DisplayTable(string temperature, string windSpeed)
+        [HttpPost]
+        public ActionResult Index(string temperature, string windSpeed)
         {
             double temperatureNum;
             double windSpeedNum;
@@ -28,7 +30,7 @@ namespace CA_ATaleOfThreeCalculators.Controllers
 
             ViewBag.errorMessage = errorMessageText;
 
-            return View();
+            return View("DisplayTable");
         }
     }
 }

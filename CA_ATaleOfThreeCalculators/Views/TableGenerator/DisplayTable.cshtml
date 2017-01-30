@@ -1,31 +1,32 @@
 ﻿@{
-    @*Wind Chill = 35.74 + 0.6215T – 35.75(V^0.16) + 0.4275T(V^0.16)*@
+    // Wind Chill = 35.74 + 0.6215T – 35.75(V^0.16) + 0.4275T(V^0.16)
 
 }
 
 <h2>Wind Chill Table</h2>
 
-<div>
+<div id="WindChillTable">
 
-    <table id="WindChillTable">
+    <table>
 
         <tr>
-            <td></td>
+            <td class="headerCells">(mph)</td>
             @for(var temp = -40; temp <= 40; temp +=5)
             {
-            <td>@temp</td>
+                <td class="headerCells">@temp&deg;</td>
             }
         </tr>
 
         @for(var windSpeed = 0; windSpeed <= 50; windSpeed +=5)
         {
         <tr>
-            <td>@windSpeed</td>
+            <td class="headerCells">@windSpeed</td>
             @for(var temp = -40; temp <= 40; temp+=5)
             {
                 var windChill = 35.74 + (0.6215 * temp) - 35.75 * Math.Pow(windSpeed, 0.16) + 0.4275 * temp * Math.Pow(windSpeed, 0.16);
                 windChill = Math.Round(windChill, 0);
-            <td>@windChill</td>
+
+                <td class="contentCells">@windChill</td>
             }
         </tr>
         }
