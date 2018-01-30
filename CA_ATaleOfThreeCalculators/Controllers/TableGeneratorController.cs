@@ -27,6 +27,11 @@ namespace CA_ATaleOfThreeCalculators.Controllers
                 errorMessageText.Add("It appears that you did not enter valid numbers.");
                 errorMessageText.Add("Please click the Try Again button below to reenter your numbers.");
             }
+            else
+            {
+                ViewBag.Temperature = temperatureNum;
+                ViewBag.WindSpeed = windSpeedNum;
+            }
 
             ViewBag.errorMessage = errorMessageText;
 
